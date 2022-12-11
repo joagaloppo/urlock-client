@@ -26,21 +26,21 @@ function SignUp({ type, text, icon }) {
 						id="authentication-modal"
 						tabIndex="-1"
 						aria-hidden="true"
-						className="flex items-center bg-black/40 fixed top-0 right-0 left-0 min-h-full min-w-full">
+						className="fixed top-0 right-0 left-0 flex min-h-full min-w-full items-center bg-black/40">
 						<motion.div
 							initial={{ opacity: 0, scale: 0.6 }}
 							animate={{ opacity: 1, scale: 1 }}
 							exit={{ opacity: 0, scale: 0.6, transition: { duration: 0.2 } }}
 							transition={{ type: 'tween' }}
-							className="relative mx-auto bg-white w-full md:max-w-md max-w-[94%] rounded-lg shadow-lg">
+							className="relative mx-auto w-full max-w-[94%] rounded-lg bg-white shadow-lg md:max-w-md">
 							<button
 								type="button"
-								className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+								className="absolute top-3 right-2.5 ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-800 dark:hover:text-white"
 								data-modal-toggle="authentication-modal"
 								onClick={handleClick}>
 								<svg
 									aria-hidden="true"
-									className="w-5 h-5"
+									className="h-5 w-5"
 									fill="currentColor"
 									viewBox="0 0 20 20"
 									xmlns="http://www.w3.org/2000/svg">
@@ -59,14 +59,14 @@ function SignUp({ type, text, icon }) {
 									<div>
 										<label
 											htmlFor="email"
-											className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+											className="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
 											Your email
 										</label>
 										<input
 											type="email"
 											name="email"
 											id="email"
-											className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+											className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400"
 											placeholder="name@company.com"
 											required
 										/>
@@ -74,7 +74,7 @@ function SignUp({ type, text, icon }) {
 									<div>
 										<label
 											htmlFor="password"
-											className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+											className="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
 											Your password
 										</label>
 										<input
@@ -82,14 +82,14 @@ function SignUp({ type, text, icon }) {
 											name="password"
 											id="password"
 											placeholder="••••••••"
-											className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+											className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400"
 											required
 										/>
 									</div>
 									<div>
 										<label
 											htmlFor="password"
-											className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+											className="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
 											Your password
 										</label>
 										<input
@@ -97,14 +97,14 @@ function SignUp({ type, text, icon }) {
 											name="password"
 											id="password"
 											placeholder="••••••••"
-											className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+											className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400"
 											required
 										/>
 									</div>
 									<div>
 										<label
 											htmlFor="password"
-											className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+											className="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
 											Your password
 										</label>
 										<input
@@ -112,13 +112,13 @@ function SignUp({ type, text, icon }) {
 											name="password"
 											id="password"
 											placeholder="••••••••"
-											className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+											className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-500 dark:bg-gray-600 dark:text-white dark:placeholder-gray-400"
 											required
 										/>
 									</div>
 									<button
 										type="submit"
-										className="w-full text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+										className="w-full rounded-lg bg-blue-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
 										Register
 									</button>
 									<div className="text-sm font-medium text-gray-500 dark:text-gray-300">

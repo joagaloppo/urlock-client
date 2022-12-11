@@ -1,6 +1,11 @@
-import { getRequest, postRequest, putRequest, deleteRequest } from '../services/httpRequest';
+import { postRequest } from '../services/httpRequest';
 
-export default function createLink(type, actionUrl, finalUrl) {
-	const a = 'a';
-	const b = 'b';
-}
+export const createLink = async (type, actionUrl, finalUrl) => {
+	try {
+		const body = await postRequest('/links', { type, actionUrl, finalUrl });
+		console.log('success:', body);
+		return body;
+	} catch (error) {
+		throw new Error(error);
+	}
+};
