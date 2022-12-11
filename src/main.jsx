@@ -1,29 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, createRoutesFromElements, Route, redirect } from 'react-router-dom';
 
-import LandingContainer from './containers/Landing';
-import Summary from './containers/Dashboard/Summary';
-import Error from './containers/Error';
+// Components
+import Landing from './features/landing';
 
-import './assets/global.css';
-import Cookie from './useCookie';
+import Dashboard from './features/dashboard';
+import Summary from './features/dashboard/pages/summary';
+import Links from './features/dashboard/pages/links';
 
-const router = createBrowserRouter([
-	{
-		path: '/',
-		element: <LandingContainer />,
-		errorElement: <Error />,
-	},
-	{
-		path: '/dashboard',
-		element: <Summary />,
-	},
-	{
-		path: '/cookie',
-		element: <Cookie />,
-	},
-]);
+import Error from './layouts/Error';
+import Cookie from './Cookie';
+// -- FINISH --
+
+import './assets/styles/index.css';
+
+const router = createBrowserRouter(
+	createRoutesFromElements(
+		<>
+			<Route path="/" element={<Landing />} />
+
+			<Route path="/dashboard" element={<Dashboard />}>
+				<Route index loader={() => redirect('/dashboard/summary')} />
+				<Route path="/dashboard/summary" element={<Summary />} />
+				<Route path="/dashboard/links" element={<Links />} />
+			</Route>
+
+			<Route path="/cookie" element={<Cookie />} />
+			<Route path="*" element={<Error />} />
+		</>
+	)
+);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
