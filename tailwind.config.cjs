@@ -2,7 +2,11 @@
 module.exports = {
 	content: ['./src/**/*.{jsx,js}'],
 	theme: {
-		extend: {},
+		extend: {
+			transitionProperty: {
+				button: 'height, background-color',
+			},
+		},
 	},
 	plugins: [],
 };
